@@ -3,6 +3,9 @@ Welcome to Database Systems!. Please modify this README file with the following 
 
 1. Your name, and student id here. Otherwise, I don't know who you are and I cannot grade your work
 
+Natalie Christie 
+918376646
+
 2. Update this table of assignments. Set to done after one of the assignments is completed:
 
 
