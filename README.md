@@ -12,7 +12,7 @@ Natalie Christie
 | Assignment               |   Completed/Not-Completed  |
 | ------------------------ | -------------------------- |
 | Milestone #1             |        completed       |
-| Milestone #2             |        not completed       |
+| Milestone #2             |        completed       |
 | Milestone #3             |        not completed       |
 
 
