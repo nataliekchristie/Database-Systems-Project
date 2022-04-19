@@ -136,7 +136,7 @@ INSERT INTO Schedule (date, doctor, status, clinic) VALUES
 ("2022-06-05 8:00:00", 1, "Available", 3);
 
 -- Appointment table inserts 
-INSERT INTO Appointment(patient, doctor, type, location, cancelled, date, service) VALUES 
+INSERT INTO Appointment(patient, doctor, type, location, cancelled, date) VALUES 
 (1, 2, "Checkup", 1, 0, "2022-06-01 12:30:00"),
 (2, 3, "Checkup", 3, 0, "2022-06-20 13:00:00"),
 (3, 1, "Checkup", 2, 0, "2022-07-15 15:00:00");
