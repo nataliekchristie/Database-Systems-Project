@@ -154,7 +154,7 @@
   -- DELETE FROM Schedule WHERE status = 'Booked';
   -- No error; no rows are being effected as intended and therefore something is off with the script 
   
-  -- 30. Testing add_to_medical_record trigger
+  -- 30. Testing add_to_medical_record_prescription trigger
   
   -- In my insert statements patient 1 is not manually inserted into the medical records.
   -- Therefore this trigger will work if a patient is inserted through the prescription table
@@ -164,7 +164,17 @@
   -- DELETE FROM Medical_Record WHERE patient = 1;
   -- Error Code: 1146. Table 'onlineappointmentdb.medical_record' doesn't exist
   
-  -- 31. Testing add_doctor_info trigger
+  -- 31. Testing add_to_medical_record_appointment trigger
+  
+  -- In my insert statements patient 1 is not manually inserted into the medical records.
+  -- Therefore this trigger will work if a patient is inserted through the appointment table
+  -- And the patient/appointment is found. If patient 1 as demonstrated here is successfully
+  -- deleted then the trigger worked.
+  
+  -- DELETE FROM Medical_Record WHERE patient = 2;
+  -- Error Code: 1146. Table 'onlineappointmentdb.medical_record' doesn't exist
+
+  -- 32. Testing add_doctor_info trigger
   
   -- Checks that values were appropriately added when a doctor is made from employee id
   -- by removing inserted doctor by name that was added in the employee insert.
@@ -172,7 +182,7 @@
   
   DELETE FROM Doctor WHERE name = 'Robert Bear';
   
-  -- 32. Testing add_nurse_info trigger
+  -- 33. Testing add_nurse_info trigger
   
   -- Checks that values were appropriately added when a nurse is made from employee id
   -- by removing inserted nurse by name that was added in the employee insert.
@@ -180,7 +190,7 @@
   
   DELETE FROM Nurse WHERE name = 'Leanne Winters';
   
-  -- 33. Testing add_receptionist_info trigger
+  -- 34. Testing add_receptionist_info trigger
   
   -- Checks that values were appropriately added when a receptionist is made from employee id
   -- by removing inserted receptionist by name that was added in the employee insert.

@@ -25,16 +25,31 @@ FOR EACH ROW
 DELIMITER ;
 
 -- -----------------------------------------------------
--- Trigger add_to_medical_record
+-- Trigger add_to_medical_record_prescription
 -- -----------------------------------------------------
 -- Trigger to add to patient medical record when prescription is added
 
 DELIMITER $$
 
-CREATE TRIGGER add_to_medical_record AFTER INSERT ON Prescriptions
+CREATE TRIGGER add_to_medical_record_prescription AFTER INSERT ON Prescriptions
 FOR EACH ROW
 	BEGIN
 		INSERT INTO Medical_Records(patient, prescriptions) VALUES (new.patient, new.prescription_id);
+    END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- Trigger add_to_medical_record_appointment
+-- -----------------------------------------------------
+-- Trigger to add to patient medical record when prescription is added
+
+DELIMITER $$
+
+CREATE TRIGGER add_to_medical_record_appointment AFTER INSERT ON Appointment
+FOR EACH ROW
+	BEGIN
+		INSERT INTO Medical_Records(patient, appointment) VALUES (new.patient, new.appointment_id);
     END$$
 
 DELIMITER ;
