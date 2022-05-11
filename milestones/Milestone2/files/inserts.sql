@@ -38,6 +38,7 @@ TRUNCATE TABLE Employee_Permissions;
 TRUNCATE TABLE Languages;
 TRUNCATE TABLE Doctor_Language;
 TRUNCATE TABLE Reviews;
+TRUNCATE TABLE Notifications;
 
 -- Inserting in order of what is showing in the M1 Document.
 
@@ -238,3 +239,8 @@ INSERT INTO Reviews(patient, doctor, content) VALUES
 (4, 3, "Was very helpful but could have been more communicative."),
 (6, 2, "Overall helpful");
 
+-- Reviews table inserts
+INSERT INTO Notifications(appointment, patient, send_date, content) VALUES
+(1, 1, "2020-06-04 12:00:00", "Your appointment is for date 2020-06-05"),
+(2, 3, "2020-07-05 11:30:00", "Your appointment is for date 2020-07-06"),
+(3, 2, "2020-08-06 10:40:00", "Your appointment is for date 2020-08-07");

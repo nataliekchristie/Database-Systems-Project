@@ -4,6 +4,7 @@
   
   -- Database that will be tested.
   USE OnlineAppointmentDB;
+  SET SQL_SAFE_UPDATES = 0;
 
   -- 1. Testing Patient table
   
@@ -144,6 +145,11 @@
   
   DELETE FROM Reviews WHERE doctor = 3;
   UPDATE Reviews SET doctor = 2 WHERE content = 'Amazing services, very friendly';
+  
+    
+  -- Testing notfications table
+  DELETE FROM Notifications WHERE appointment = 1;
+  UPDATE Notifications SET send_date = "2020-07-06 11:30:00" WHERE patient = 3;
   
   -- 29. Testing set_schedule_status trigger
   
