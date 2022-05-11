@@ -239,7 +239,7 @@ INSERT INTO Reviews(patient, doctor, content) VALUES
 (4, 3, "Was very helpful but could have been more communicative."),
 (6, 2, "Overall helpful");
 
--- Reviews table inserts
+-- Notifications table inserts
 INSERT INTO Notifications(appointment, patient, send_date, content) VALUES
 (1, 1, "2020-06-04 12:00:00", "Your appointment is for date 2020-06-05"),
 (2, 3, "2020-07-05 11:30:00", "Your appointment is for date 2020-07-06"),
