@@ -13,15 +13,14 @@ import database as db
 # environment variables
 token = os.environ['DISCORD_TOKEN']
 server = os.environ['DISCORD_GUILD']
-server_id = os.environ['SERVER_ID']  # optional
-channel_id = os.environ['CHANNEL_ID']  # optional
+#server_id = os.environ['SERVER_ID']  # optional
+#channel_id = os.environ['CHANNEL_ID']  # optional
 
 # database connection
 # secret keys related to your database must be updated. Otherwise, it won't work
 db_conn = db.connect()
 # bot events
 client = discord.Client()
-
 
 @client.event
 async def on_ready():
@@ -31,8 +30,7 @@ async def on_ready():
     welcome message on the IDE console, not on Discord
     :return: VOID
     """
-    print("{} has joined the server".format(client.user.name))
-
+    print("{} has joined the server".format(client.user.name)) 
 
 @client.event
 async def on_message(message):
@@ -49,8 +47,10 @@ async def on_message(message):
     else:
         # A message was send by the user.
         msg = message.content.lower()
-        if "milestone3" in msg:
-            response = "I am alive. Signed: 'your bot'"
+        #if "milestone3" in msg:
+        #  response = "I am alive. Signed: 'your bot'"
+        response = db.response(msg)
+            
     if response:
         # bot sends response to the Discord API and the response is show
         # on the channel from your Discord server that triggered this method.
@@ -61,7 +61,9 @@ async def on_message(message):
 try:
     # start the bot and keep the above methods listening for new events
     client.run(token)
+  
 except:
     print("Bot is offline because your secret environment variables are not set. Head to the left panel, " +
           "find the lock icon, and set your environment variables. For more details, read the README file in your " +
           "milestone 3 repository")
+

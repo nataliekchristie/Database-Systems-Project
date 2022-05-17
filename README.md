@@ -13,7 +13,7 @@ Natalie Christie
 | ------------------------ | -------------------------- |
 | Milestone #1             |        completed       |
 | Milestone #2             |        completed       |
-| Milestone #3             |        not completed       |
+| Milestone #3             |        completed       |
 
 
 
