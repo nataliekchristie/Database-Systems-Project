@@ -12,18 +12,20 @@ Command: “\no_of_patients <doctor>”
 Example:  \no_of_patients 2 
 
 2. Find the number of doctors who have written prescriptions to over X patients. Command: “\doctor_presc <number of patients>”
-Example: \doctor_presc 5
+Example: \doctor_presc 0
 
 3. Update the schedule to make a schedule day available and the appointment marked as cancelled when it is cancelled by the patient.
 (This command will find the appointment date, then the associated schedule date, and change its status to available)
-Command: “\cancel_appointment <patient> <date>”
+Command: “\cancel_appointment <patient id> <date>”
+Example: \cancel_appointment 1 2020-06-01 10:00:00
 
 4. Show the total number of doctors and nurses for a clinic. 
 Command: “\clinic_all_doct_nurse <clinic id>”
 Example: \clinic_all_doct_nurse 1
 
 5. Create a notification for 1 week and 1 day before an appointment is made. (This command will take an appointment date, find the date a week and a day before and create a notification for the patient with the specified content) 
-Command: “\create_notif <appointment> <content>”
+Command: “\create_notif <appointment id> <content>”
+Example: \create_notif 5 "Don't forget your appointment!"
 
 6. Find all the appointments where a patient was serviced by specific doctor. 
 Command: “\patient_doctor_appt <patient name> <doctor name>”

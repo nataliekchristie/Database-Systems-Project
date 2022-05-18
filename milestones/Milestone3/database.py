@@ -152,7 +152,7 @@ def no_of_patients(doctor):
     result.border = False
     result.preserve_internal_border = True
   else:
-    print("Error")
+    result = "No results found"
   return result
 
 def doctor_presc(num):
@@ -172,10 +172,12 @@ ON Patient.patient_id = Prescriptions.patient WHERE Doctor.doctor_id = Prescript
       temp.add_row([data])
     temp.hrules = 3
     result = temp
-    result.set_style(DOUBLE_BORDER)
-    result.vrules = NONE
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
-    print("Error")
+    result = "No results found"
   return result
 
 def cancel_appointment(patient, date):
@@ -216,8 +218,12 @@ AS "Sum" """
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
-    print("Error")
+    result = "No results found"
   return result
   
 def create_notif(appt, content):
@@ -257,6 +263,10 @@ WHERE Patient.name = %s AND Employee.name = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -282,8 +292,12 @@ Languages.name = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
-    print("No results found")
+    result = "No results found"
   return result
 
 def clinic_cancellations(date):
@@ -341,6 +355,10 @@ WHERE Insurance_Providers.name = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -364,6 +382,10 @@ Patient ON Patient.patient_id = Appointment.patient WHERE Patient.name = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -388,6 +410,10 @@ JOIN Clinic ON Employee.clinic = Clinic.clinic_id WHERE Clinic.clinic_id = %s"""
       temp.add_row(data)
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -412,6 +438,10 @@ Clinic.clinic_id = Schedule.clinic WHERE Schedule.status = %s"""
       temp.add_row(data)
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -439,6 +469,10 @@ GROUP BY Employee.name"""
       temp.add_row(data)
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -462,8 +496,12 @@ WHERE InsuranceP_Clinic.insurance = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
-    print("Error")
+    result = "No results found"
   return result
 
 def patient_appointments_time(patient, start, end):
@@ -486,6 +524,10 @@ AND Appointment.patient = %s """
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -513,6 +555,10 @@ Clinic.clinic_id = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -535,6 +581,10 @@ Patient.patient_id = %s"""
       temp.add_row([data])
     temp.hrules = 3
     result = temp
+    result.align = "c"
+    result.junction_char = ' '
+    result.border = False
+    result.preserve_internal_border = True
   else:
     result = "No results found"
   return result
@@ -568,6 +618,10 @@ FROM Clinic ORDER BY "Sum" DESC LIMIT 1"""
           temp.add_row(data)
           temp.hrules = 3
         result = temp
+        result.align = "c"
+        result.junction_char = ' '
+        result.border = False
+        result.preserve_internal_border = True
   except Exception as error:
     print(error)
     result = -1 
